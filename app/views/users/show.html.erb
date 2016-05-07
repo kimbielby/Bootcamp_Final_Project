@@ -1,0 +1,46 @@
+<%= if user_signed_in? %>
+  <h2>Welcome <%= current_user.name %>!</h2>
+  <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %>
+
+<%else%>
+  <h2>Nobody logged in</h2>
+<%end%>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <title>Main Page</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-default" aria-label="center Align">
+            <span class="glyphicon glyphicons-31-pencil" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-default" aria-label="center Align"></button>
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+
+      <div class="row">
+      </div>
+    </div>
+  </body>
+</html>
