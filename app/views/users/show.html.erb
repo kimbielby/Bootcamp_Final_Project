@@ -7,12 +7,10 @@
     <title>Main Page</title>
   </head>
   <body>
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3">
-          <button type="button" class="btn btn-default" aria-label="center Align">PENCIL
-          </button>
+
         </div>
         <div class="col-sm-3">
           <button type="button" class="btn btn-default" aria-label="center Align">CALENDAR
@@ -32,21 +30,33 @@
       </div>
 
       <div class="row">
+        <div class="text-left">
+          <% if user_signed_in? %>
+          <h2>Welcome <%= @user.first_name %>!</h2>
+          <%end%>
+        </div>
         <div class="text-center">
           <%= Time.now.strftime("%A %d %B %Y") %>
         </div>
       </div>
 
       <div class="row">
+        <div class="text-center">
+          <% @posts.each do |post| %>
+            <p><%= post.post_title %></p>
+            <p><%= post.post_date %></p>
+            <p><%= post.post_content %></p>
+          <%end%>
+        </div>
+        <footer class="navbar-default navbar-fixed-bottom">
+          <div class="container-fluid">
+            <span>
+              <button type="button" class="btn btn-default pencil-button"  aria-label="center Align">PENCIL
+              </button>
+            </span>
+          </div>
+        </footer>
       </div>
     </div>
   </body>
 </html>
-
-<!-- <span class="glyphicon glyphicons-31-pencil" aria-hidden="true"></span> -->
-
-<!-- <span class="glyphicon glyphicons-46-calendar" aria-hidden="true"></span> -->
-
-<!-- <span class="glyphicon glyphicons-433-plus" aria-hidden="true"></span> -->
-
-<!-- <span class="glyphicon glyphicons-137-cogwheel" aria-hidden="true"></span> -->
