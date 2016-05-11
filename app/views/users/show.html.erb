@@ -10,7 +10,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3">
-
+          <button type="button" class="btn btn-default pencil-button"  aria-label="center Align">PENCIL</button>
+          <a class="btn btn-primary pull-right" href="/all_posts">ALL POSTS</a>
         </div>
         <div class="col-sm-3">
           <button type="button" class="btn btn-default" aria-label="center Align">CALENDAR
@@ -41,21 +42,31 @@
       </div>
 
       <div class="row">
-        <div class="text-center">
-          <% @posts.each do |post| %>
-            <p><%= post.post_title %></p>
-            <p><%= post.post_date %></p>
-            <p><%= post.post_content %></p>
-          <%end%>
+        <div class="text-right">
+            <% @all_users.each do |all_users| %>
+              <ul>
+                <h4><%= all_users.first_name %> <%= all_users.last_name %></h4>
+              </ul>
+            <%end%>
         </div>
-        <footer class="navbar-default navbar-fixed-bottom">
-          <div class="container-fluid">
-            <span>
-              <button type="button" class="btn btn-default pencil-button"  aria-label="center Align">PENCIL
-              </button>
-            </span>
+        <%= form_for @post do |f| %>
+          <div class="field">
+            <%= f.label :post_title %><br />
+            <%= f.text_field :post_title%>
           </div>
-        </footer>
+
+          <div class="field">
+            <%= f.label :post_content %><br />
+            <%= f.text_field :post_content%>
+          </div>
+
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+            <%= f.hidden_field :post_date, :value => Time.now %>
+
+          <div class="actions">
+            <%= f.submit "Post" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </body>

@@ -23,13 +23,16 @@ class UsersController < ApplicationController
   end
 
   def show
+    @all_users = User.all 
+    @post = Post.new
     @user = User.find(params[:id])
     if @user != current_user
       flash[:notice] = 'You are not authorized to view this page'
       redirect_to '/'
 
     else
-      @posts = Post.where(user_id: @user.id).page(1)
+      @posts = Post.all
+      # @posts = Post.where(user_id: @user.id).page(1)
       render 'show'
     end
   end
