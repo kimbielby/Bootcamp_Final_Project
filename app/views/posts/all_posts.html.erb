@@ -1,8 +1,9 @@
 <div class="text-center">
   <% @posts.each do |post| %>
-    <p><%= post.post_title %></p>
+
+    <p><%= link_to post.post_title, post_path(post)%></p>
     <p><%= post.post_date %></p>
     <p><%= post.post_content %></p>
-    <p><%= (User.find_by(id: post.user_id.to_i)).first_name %> <%= (User.find_by(id: post.user_id.to_i)).last_name %></p>
+    <p><%= post.user.first_name %> <%= post.user.last_name %></p>
   <%end%>
 </div>

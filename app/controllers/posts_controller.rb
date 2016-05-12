@@ -10,18 +10,16 @@ class PostsController < ApplicationController
     @post.update(user_id: current_user.id)
     @post.save
     # binding.pry
-
     redirect_to user_path(current_user.id)
   end
 
   def show
-
-    @post = Post.new(post_params)
+    @selected_post = Post.find_by(id: params[:id])
   end
 
   def all_posts
     @posts = Post.all
-    
+
   end
 
   def post_params
