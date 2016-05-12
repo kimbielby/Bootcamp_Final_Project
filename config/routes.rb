@@ -4,10 +4,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :posts
-
-  resources :comments 
-
+  resources :posts do
+    resources :comments
+  end
 
 
   get '/' => 'users#landing_page'
