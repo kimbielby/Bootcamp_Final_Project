@@ -17,6 +17,17 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @selected_post = Post.find_by(id: params[:id])
     @comments = @selected_post.comments
+    @current_user_posts = Post.where(user_id: current_user.id)
+
+  end
+
+  def edit
+    @post = Post.find_by(id: params[:id])
+    # @post.update(post_content: params[:post_content])
+
+  end
+
+  def update
   end
 
   def all_posts

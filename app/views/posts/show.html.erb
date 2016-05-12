@@ -1,6 +1,16 @@
+<div>
+  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET' %>
+
+  <%= link_to 'All Posts', all_posts_path, method: 'GET' %></div>
+
+
 <p><%= @selected_post.post_title %></p>
 <p><%= @selected_post.post_content %></p>
 <p><%= render @comments %></p>
+
+<% if @current_user_posts.find { |post| post.id == @selected_post.id}  %>
+ <%= link_to "edit post", edit_post_path %>
+  <%end%>
 
 <%= form_for [@selected_post, @comment] do |f| %>
   <div class="field">

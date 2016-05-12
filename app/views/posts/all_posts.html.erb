@@ -1,3 +1,7 @@
+<div class="text-left">
+  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET' %>
+</div>
+
 <div class="text-center">
   <% @posts.each do |post| %>
 

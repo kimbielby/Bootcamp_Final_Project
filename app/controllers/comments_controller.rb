@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment.update(user_id: current_user.id)
     @comment.save
 
-  redirect_to post 
+  redirect_to post
   end
 
   def new
