@@ -14,9 +14,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new  
+    @comment = Comment.new
     @selected_post = Post.find_by(id: params[:id])
-
+    @comments = @selected_post.comments
   end
 
   def all_posts

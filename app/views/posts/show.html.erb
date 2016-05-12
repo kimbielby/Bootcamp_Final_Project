@@ -1,5 +1,6 @@
 <p><%= @selected_post.post_title %></p>
 <p><%= @selected_post.post_content %></p>
+<p><%= render @comments %></p>
 
 <%= form_for [@selected_post, @comment] do |f| %>
   <div class="field">
