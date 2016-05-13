@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'paperclip'
+# gem 'carrierwave'
 gem 'kaminari'
 gem 'devise'
 gem "pry"

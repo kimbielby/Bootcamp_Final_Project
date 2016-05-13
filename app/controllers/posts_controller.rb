@@ -28,6 +28,14 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update_attributes(post_params)
+      flash[:notice] = 'Post was updated successfully'
+      redirect_to post_path(params[:id])
+    else
+      flash[:notice] = 'Post was not updated successfully'
+      render edit_post_path(params[:id])
+    end
   end
 
   def all_posts
@@ -36,6 +44,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:post_title, :post_date, :post_content, :user_id)
+    params.require(:post).permit(:post_title, :post_date, :post_content, :user_id, :pic)
   end
 end

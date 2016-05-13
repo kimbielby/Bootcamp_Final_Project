@@ -60,6 +60,11 @@
             <%= f.text_field :post_content%>
           </div>
 
+          <div>
+            <%= f.label :pic %>
+            <%= f.file_field :pic %>
+          </div>
+
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <%= f.hidden_field :post_date, :value => Time.now %>
 
