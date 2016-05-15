@@ -8,10 +8,15 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :networks
+
 
   get '/' => 'users#landing_page'
 
   get '/all_posts' => 'posts#all_posts'
+
+  get '/networks/join/:id' => 'networks#join', as: 'join'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

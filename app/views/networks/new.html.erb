@@ -1,0 +1,14 @@
+<h3>Create a Network</h3>
+
+<%= form_for @network do |f| %>
+  <div class="field">
+    <%= f.label :network_name %><br />
+    <%= f.text_field :network_name%>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="actions">
+    <%= f.submit "Post" %>
+  </div>
+<%end%>

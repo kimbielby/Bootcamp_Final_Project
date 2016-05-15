@@ -1,0 +1,6 @@
+<div class="text-center">
+  <% @all_networks.each do |network| %>
+
+    <p><%= link_to network.network_name, join_path(network.id)%></p>
+  <%end%>
+</div>

@@ -22,9 +22,15 @@
           </button>
           <button type="button" class="btn btn-default" aria-label="center Align">SETTINGS
           </button>
+          <div align="right">
+            <%= link_to 'Create Network', new_network_path %>
+          </div>
+          <div align="right">
+            <%= link_to 'Join Network', network_path %>
+          </div>
         </div>
         <div class="col-sm-2">
-          <div align="right pull-">
+          <div align="right">
             <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %>
           </div>
         </div>
@@ -42,36 +48,49 @@
       </div>
 
       <div class="row">
-        <div class="text-right">
-            <% @all_users.each do |all_users| %>
-              <ul>
-                <h4><%= all_users.first_name %> <%= all_users.last_name %></h4>
-              </ul>
-            <%end%>
+        <div class="col-sm-4">
+          <%= form_for @post do |f| %>
+            <div class="field">
+              <%= f.label :post_title %><br />
+              <%= f.text_field :post_title%>
+            </div>
+
+            <div class="field">
+              <%= f.label :post_content %><br />
+              <%= f.text_field :post_content%>
+            </div>
+
+            <div>
+              <%= f.label :pic %>
+              <%= f.file_field :pic %>
+            </div>
+
+              <%= f.hidden_field :user_id, :value => current_user.id %>
+              <%= f.hidden_field :post_date, :value => Time.now %>
+
+            <div class="actions">
+              <%= f.submit "Post" %>
+            </div>
+          <% end %>
         </div>
-        <%= form_for @post do |f| %>
-          <div class="field">
-            <%= f.label :post_title %><br />
-            <%= f.text_field :post_title%>
+        <div class="col-sm-4">
+          <div class="text-center">
+            <% @user_networks.each do |user_networks| %>
+              <ol>
+                <h4><%= user_networks.network_name %> </h4>
+              </ol>
+            <%end%>
           </div>
-
-          <div class="field">
-            <%= f.label :post_content %><br />
-            <%= f.text_field :post_content%>
+        </div>
+        <div class="col-sm-4">
+          <div class="text-right">
+              <% @all_users.each do |all_users| %>
+                <ul>
+                  <h4><%= all_users.first_name %> <%= all_users.last_name %></h4>
+                </ul>
+              <%end%>
           </div>
-
-          <div>
-            <%= f.label :pic %>
-            <%= f.file_field :pic %>
-          </div>
-
-            <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.hidden_field :post_date, :value => Time.now %>
-
-          <div class="actions">
-            <%= f.submit "Post" %>
-          </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </body>
