@@ -10,56 +10,53 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3">
-          <button type="button" class="btn btn-default pencil-button"  aria-label="center Align">PENCIL</button>
-          <a class="btn btn-primary pull-right" href="/all_posts">ALL POSTS</a>
+          <div align="center">
+            <%= link_to 'Create Network', new_network_path, class: 'btn btn-success' %>
+          </div>
         </div>
         <div class="col-sm-3">
-          <button type="button" class="btn btn-default" aria-label="center Align">CALENDAR
-          </button>
-        </div>
-        <div class="col-sm-4">
-          <button type="button" class="btn btn-default" aria-label="center Align">PLUS
-          </button>
-          <button type="button" class="btn btn-default" aria-label="center Align">SETTINGS
-          </button>
-          <div align="right">
-            <%= link_to 'Create Network', new_network_path %>
-          </div>
-          <div align="right">
-            <%= link_to 'Join Network', network_path %>
+          <div align="center">
+            <%= link_to 'Join Network', network_path, class: 'btn btn-warning' %>
           </div>
         </div>
-        <div class="col-sm-2">
-          <div align="right">
-            <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %>
+        <div class="col-sm-3">
+          <div align="center">
+            <%= link_to 'ALL POSTS', all_posts_path, class: 'btn btn-info' %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div align="center">
+            <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE', class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
 
       <div class="row">
+        <div class="col-sm-5">
+          <div class="text-left">
+            <% if user_signed_in? %>
+            <h2>Welcome <%= @user.first_name %>!</h2>
+            <%end%>
+          </div>
+        </div>
+
         <div class="text-left">
-          <% if user_signed_in? %>
-          <h2>Welcome <%= @user.first_name %>!</h2>
-          <%end%>
-        </div>
-        <div class="text-center">
-          <%= Time.now.strftime("%A %d %B %Y") %>
+          <h4>Today is...</h4>
+          <h5><%= Time.now.strftime("%A %d %B %Y") %></h5>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <%= form_for @post do |f| %>
             <div class="field">
               <%= f.label :post_title %><br />
               <%= f.text_field :post_title%>
             </div>
-
             <div class="field">
               <%= f.label :post_content %><br />
               <%= f.text_field :post_content%>
             </div>
-
             <div>
               <%= f.label :pic %>
               <%= f.file_field :pic %>
@@ -68,28 +65,22 @@
               <%= f.hidden_field :user_id, :value => current_user.id %>
               <%= f.hidden_field :post_date, :value => Time.now %>
 
-            <div class="actions">
+            <div class="actions btn">
               <%= f.submit "Post" %>
             </div>
           <% end %>
         </div>
         <div class="col-sm-4">
-          <div class="text-center">
+          <div class="text-left">
+            <h4>My Networks:</h4>
             <% @user_networks.each do |user_networks| %>
               <ol>
-                <h4><%= user_networks.network_name %> </h4>
+                <h5><%= user_networks.network_name %> </h5>
               </ol>
             <%end%>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="text-right">
-              <% @all_users.each do |all_users| %>
-                <ul>
-                  <h4><%= all_users.first_name %> <%= all_users.last_name %></h4>
-                </ul>
-              <%end%>
-          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,7 @@
+<div>
+  <%= link_to 'Cancel', user_path(current_user.id), method: 'GET', class: 'btn btn-primary' %>
+</div>
+
 <h3>Create a Network</h3>
 
 <%= form_for @network do |f| %>

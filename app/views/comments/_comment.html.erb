@@ -1,2 +1,2 @@
 <article class="comment"><br ><%= comment.comment_content %><br >
-<%= User.find(comment.user_id).first_name %> <%= User.find(comment.user_id).last_name %>, <%= Time.now %><br >  </article>
+Posted By: <%= User.find(comment.user_id).first_name %> <%= User.find(comment.user_id).last_name %>, <%= Time.now %><br >  </article>

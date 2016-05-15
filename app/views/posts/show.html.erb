@@ -1,13 +1,13 @@
 <div>
-  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET' %>
+  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET', class: 'btn btn-primary' %>
 
-  <%= link_to 'All Posts', all_posts_path, method: 'GET' %></div>
+  <%= link_to 'All Posts', all_posts_path, method: 'GET', class: 'btn btn-info' %></div>
 
 
-<p><%= @selected_post.post_title %></p>
-<p><%= @selected_post.post_content %></p>
-<p><h3>COMMENTS</h3></p>
+<p>Post Title: <%= @selected_post.post_title %></p>
+<p>Post Content: <%= @selected_post.post_content %></p>
 <%= image_tag @selected_post.pic.url, width: '100' %>
+<p><h3>COMMENTS</h3></p>
 <p><%= render @comments %></p>
 
 <% if @current_user_posts.find { |post| post.id == @selected_post.id}  %>
@@ -24,7 +24,7 @@
   <%= f.hidden_field :comment_date, :value => Time.now %>
   <%= f.hidden_field :post_id, :value => @selected_post.id %>
 
-  <div class="actions">
+  <div class="actions btn">
     <%= f.submit "Post" %>
   </div>
 <%end%>

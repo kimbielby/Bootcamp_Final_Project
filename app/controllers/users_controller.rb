@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def show
     @all_networks = Network.all
     @user_networks = current_user.networks
-    @all_users = User.all
+    # @network_users = Network.where(id: current_user.network_id)
     @post = Post.new
     @user = User.find(params[:id])
     if @user != current_user
