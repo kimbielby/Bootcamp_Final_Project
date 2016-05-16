@@ -8,14 +8,22 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.update(user_id: current_user.id)
-    @post.save
+
+
+    if @post.save
+      flash[:notice] = 'Your post has been saved successfully!'
+      redirect_to user_path(current_user.id)
+    else
+      flash[:notice] = 'Your post has not been saved. Please check the form and try again.'
+      redirect_to user_path(current_user.id)
+    end
     # binding.pry
-    redirect_to user_path(current_user.id)
+
   end
 
   def show
     @comment = Comment.new
-    # @network = post.network.id 
+    # @network = post.network.id
     @selected_post = Post.find_by(id: params[:id])
     @comments = @selected_post.comments
     @current_user_posts = Post.where(user_id: current_user.id)

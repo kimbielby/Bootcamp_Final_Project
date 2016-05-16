@@ -20,9 +20,6 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <div align="center">
-            <%= link_to 'ALL POSTS', all_posts_path, class: 'btn btn-info' %>
-          </div>
         </div>
         <div class="col-sm-3">
           <div align="center">
@@ -67,7 +64,7 @@
             </div>
 
               <%= f.hidden_field :user_id, :value => current_user.id %>
-              <%= f.hidden_field :post_date, :value => Time.now %>
+              <%= f.hidden_field :post_date, :value => Time.now.strftime("%A %d %B %Y") %>
 
             <div class="actions btn">
               <%= f.submit "Post" %>

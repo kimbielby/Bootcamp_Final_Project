@@ -7,7 +7,7 @@
   <% @posts.each do |post| %>
     <p>Post Title: <%= link_to post.post_title, post_path(post)%></p>
     <p>Network: <%= post.network.network_name %></p>
-    <p>Date Posted: <%= post.post_date %></p>
+    <p>Date Posted: <%= post.post_date.strftime("%A %d %B %Y") %></p>
     <p>Posted By: <%= post.user.first_name %> <%= post.user.last_name %></p><br>
   <%end%>
 </div>

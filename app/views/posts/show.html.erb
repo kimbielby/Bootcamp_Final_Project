@@ -1,9 +1,6 @@
 <div>
   <%= link_to 'Homepage', user_path(current_user.id), method: 'GET', class: 'btn btn-primary' %>
 
-  <%= link_to 'All Posts', all_posts_path, method: 'GET', class: 'btn btn-info' %></div>
-
-
 <p>Post Title: <%= @selected_post.post_title %></p>
 <p>Post Content: <%= @selected_post.post_content %></p>
 <p>Network: <%= @selected_post.network.network_name  %></p>
