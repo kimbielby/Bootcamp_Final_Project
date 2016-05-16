@@ -58,6 +58,10 @@
               <%= f.text_field :post_content%>
             </div>
             <div>
+              <%= f.label :Network %>
+              <%= f.collection_select(:network_id, @user_networks, :id, :network_name) %>
+            </div>
+            <div>
               <%= f.label :pic %>
               <%= f.file_field :pic %>
             </div>
@@ -73,9 +77,9 @@
         <div class="col-sm-4">
           <div class="text-left">
             <h4>My Networks:</h4>
-            <% @user_networks.each do |user_networks| %>
+            <% @user_networks.each do |user_network| %>
               <ol>
-                <h5><%= user_networks.network_name %> </h5>
+                <h5><%= link_to user_network.network_name, network_posts_path(user_network) %> </h5>
               </ol>
             <%end%>
           </div>

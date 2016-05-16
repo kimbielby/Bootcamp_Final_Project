@@ -22,7 +22,11 @@ class NetworksController < ApplicationController
 
   def show
     @all_networks = Network.all
+  end
 
+  def show_network_posts
+    @network = Network.find(params[:id])
+    @posts = @network.posts.all
   end
 
   def join
@@ -41,8 +45,15 @@ class NetworksController < ApplicationController
 
   def leave
     @network = Network.find(params[:id])
-    current_user.networks.delete(@network)
-    redirect_to user_path(current_user.id)
+    if @user_networks.include?(@network)
+      current_user.networks.delete(@network)
+      flash[:notice] = 'You have successfully left the network'
+      redirect_to user_path(current_user.id)
+    else
+      flash[:notice] = 'You are not a member of this network'
+      redirect_to user_path(current_user.id)
+    end
+
   end
 
 private

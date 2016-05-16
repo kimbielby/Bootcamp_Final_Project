@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    # @network = post.network.id 
     @selected_post = Post.find_by(id: params[:id])
     @comments = @selected_post.comments
     @current_user_posts = Post.where(user_id: current_user.id)

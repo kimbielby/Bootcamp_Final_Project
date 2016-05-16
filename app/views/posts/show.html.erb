@@ -6,6 +6,7 @@
 
 <p>Post Title: <%= @selected_post.post_title %></p>
 <p>Post Content: <%= @selected_post.post_content %></p>
+<p>Network: <%= @selected_post.network.network_name  %></p>
 <%= image_tag @selected_post.pic.url, width: '100' %>
 <p><h3>COMMENTS</h3></p>
 <p><%= render @comments %></p>

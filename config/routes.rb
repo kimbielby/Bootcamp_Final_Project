@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   get '/networks/join/:id' => 'networks#join', as: 'join'
 
+  get '/networks/leave/:id' => 'networks#leave', as: 'leave'
+
+  get '/networks/:id/posts' => 'networks#show_network_posts', as: 'network_posts'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
