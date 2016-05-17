@@ -1,10 +1,8 @@
-<div class="text-left">
-  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET', class: 'btn btn-primary' %>
-</div>
+<div class="container-fluid join_network_container">
+  <div class="text-center">
+    <% @all_networks.each do |network| %>
 
-<div class="text-center">
-  <% @all_networks.each do |network| %>
-
-    <p><%= link_to network.network_name, join_path(network.id)%></p>
-  <%end%>
+      <p><%= link_to network.network_name, join_path(network.id)%></p>
+    <%end%>
+  </div>
 </div>

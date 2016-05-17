@@ -1,5 +1,3 @@
-<%= link_to "Cancel", post_path(params[:id]) %>
-
 <%= form_for @post do |f| %>
   <div class="field">
     <%= f.label :post_title %><br />
@@ -23,3 +21,4 @@
     <%= f.submit "Post" %>
   </div>
 <% end %>
+<%= link_to "Cancel", post_path(params[:id]) %>

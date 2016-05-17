@@ -1,3 +1,44 @@
+.create_network_container {
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.4),
+  rgba(247, 235, 213, 0.4)
+  ),
+   url(http://geoawesomeness.com/wp-content/uploads/2013/11/maps.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
+// .join_network_container {
+//   background-image: url(http://3.bp.blogspot.com/-ie44UzPvqxk/Td3Amf23TdI/AAAAAAAABRQ/J2ooSz_iGSc/s1600/ToktoMetroMap_en.png);
+//   background-position: center top;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   min-height: 100%;
+//   min-width: 100%;
+//   position: absolute;
+// }
+
+.network_posts_container {
+  background-image: url(https://cdn.notonthehighstreet.com/system/product_images/images/001/628/024/original_inspirational-quote-travel-journal.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
+
+
+
+
+
+
+
 // Place all the styles related to the Networks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

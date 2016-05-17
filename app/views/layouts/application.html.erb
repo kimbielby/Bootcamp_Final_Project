@@ -8,13 +8,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <%= render 'layouts/messages' %>
+      
 
-    <% flash.each do |key, msg| %>
-      <%= content_tag :div, msg, id: key %>
-    <% end %>
+      <%= yield %>
+    </main>
 
 
-    <%= yield %>
 
   </body>
 </html>

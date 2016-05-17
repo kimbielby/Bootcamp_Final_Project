@@ -1,13 +1,11 @@
-<div class="text-left">
-  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET', class: 'btn btn-primary' %>
-</div>
-
-<div class="text-center">
-  <h3>List of Posts</h3>
-  <% @posts.each do |post| %>
-    <p>Post Title: <%= link_to post.post_title, post_path(post)%></p>
-    <p>Network: <%= post.network.network_name %></p>
-    <p>Date Posted: <%= post.post_date.strftime("%A %d %B %Y") %></p>
-    <p>Posted By: <%= post.user.first_name %> <%= post.user.last_name %></p><br>
-  <%end%>
+<div class="container-fluid network_posts_container">
+  <div class="text-center">
+    <h3>List of Posts</h3>
+    <% @posts.each do |post| %>
+      <p>Post Title: <%= link_to post.post_title, post_path(post)%></p>
+      <p>Network: <%= post.network.network_name %></p>
+      <p>Date Posted: <%= post.post_date.strftime("%A %d %B %Y") %></p>
+      <p>Posted By: <%= post.user.first_name %> <%= post.user.last_name %></p><br>
+    <%end%>
+  </div>
 </div>

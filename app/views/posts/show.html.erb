@@ -1,6 +1,5 @@
-<div>
-  <%= link_to 'Homepage', user_path(current_user.id), method: 'GET', class: 'btn btn-primary' %>
-
+<div class="container-fluid post_details_container">
+<%= link_to 'Back', network_posts_path(current_user.id) %>
 <p>Post Title: <%= @selected_post.post_title %></p>
 <p>Post Content: <%= @selected_post.post_content %></p>
 <p>Network: <%= @selected_post.network.network_name  %></p>
@@ -26,3 +25,5 @@
     <%= f.submit "Post" %>
   </div>
 <%end%>
+
+</div>

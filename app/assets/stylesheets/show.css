@@ -1,1 +1,9 @@
-
+.homepage_container {
+  background-image: url(http://www.hdwallpapera.com/wp-content/uploads/wallpaper/moshlab/wallpapers-033/wallpaper%20Wallpaper%20Travel%20World%20Golden%20City%20Coast%20Cityscapes%20Images%20Full%20HD%20Free.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
