@@ -14,16 +14,25 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Kims Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Tristan Link</a></li>
+        <li class="active"><%= link_to "Home", user_path(current_user.id) %></li>
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", user_path(current_user.id) %></li>
         <li><%= link_to 'Create Network', new_network_path %></li>
         <li><%= link_to 'Join Network', network_path(current_user.id) %></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Networks <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% current_user.networks.each do |user_network| %>
+              <li>
 
+                    <%= link_to user_network.network_name, network_posts_path(user_network) %>
+              </li>
+            <%end%>
+          </ul>
+        </li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
