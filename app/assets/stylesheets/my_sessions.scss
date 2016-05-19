@@ -1,5 +1,8 @@
 .sign_in_container {
-  background-image: url(http://freeimg.xyz/wp-content/uploads/2014/10/Backpacker-Travel.jpg);
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.2),
+  rgba(247, 235, 213, 0.2)
+  ), url(http://freeimg.xyz/wp-content/uploads/2014/10/Backpacker-Travel.jpg);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;

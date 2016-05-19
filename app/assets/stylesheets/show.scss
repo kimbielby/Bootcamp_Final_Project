@@ -1,0 +1,39 @@
+.homepage_container {
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.5),
+  rgba(247, 235, 213, 0.5)
+  ), url(http://www.hdwallpapera.com/wp-content/uploads/wallpaper/moshlab/wallpapers-033/wallpaper%20Wallpaper%20Travel%20World%20Golden%20City%20Coast%20Cityscapes%20Images%20Full%20HD%20Free.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
+// .welcome_name {
+//   color: #ff665e;
+//   mix-blend-mode: difference;
+// }
+
+// .today_and_networks_text {
+//   color: white;
+//   mix-blend-mode: difference;
+// }
+
+.today {
+  color: #6AECFE;
+  mix-blend-mode: difference;
+}
+
+.network_list {
+  max-width: fit-content;
+  background-color: white;
+  padding-right: 40px;
+}
+
+// .post_form {
+//   color: white;
+//   tex
+//   mix-blend-mode: difference;
+// }

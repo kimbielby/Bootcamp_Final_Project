@@ -1,29 +1,47 @@
-<div class="container-fluid post_details_container">
-<%= link_to 'Back', network_posts_path(@selected_post.network_id), method: 'GET' %>
-<p>Post Title: <%= @selected_post.post_title %></p>
-<p>Post Content: <%= @selected_post.post_content %></p>
-<p>Network: <%= @selected_post.network.network_name  %></p>
-<%= image_tag @selected_post.pic.url, width: '100' %>
-<p><h3>COMMENTS</h3></p>
-<p><%= render @comments %></p>
+<div class="container-fluid post_details_container"><br>
+  <%= link_to 'Back', network_posts_path(@selected_post.network_id), method: 'GET', class: "btn btn-info" %><br>
 
-<% if @current_user_posts.find { |post| post.id == @selected_post.id}  %>
- <%= link_to "edit post", edit_post_path %>
+  <div class="panel panel-primary content_panel">
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong>Post Title:</strong> <%= @selected_post.post_title %></h3>
+    </div>
+    <div class="panel-body">
+      <strong>Post Content:</strong> <%= @selected_post.post_content %>
+    </div>
+    <div class="panel-footer"><strong>Network:</strong> <%= @selected_post.network.network_name  %></div>
+  </div>
+  <div class="panel panel-default image_content">
+    <div class="panel-body">
+      <%= image_tag @selected_post.pic.url, width: '100' %>
+    </div>
+  </div>
+  <div class="panel panel-info content_panel">
+    <div class="panel-heading">
+      <h3 class="panel-title"><h3>Comments</h3></h3>
+    </div>
+    <div class="panel-body">
+      <%= render @comments %>
+    </div>
+  </div>
+
+
+  <% if @current_user_posts.find { |post| post.id == @selected_post.id}  %>
+   <%= link_to "edit post", edit_post_path, class: "btn btn-info" %>
+    <%end%>
+
+  <%= form_for [@selected_post, @comment] do |f| %>
+    <div class="field">
+      <%= f.label :Comment %><br />
+      <%= f.text_field :comment_content %>
+    </div>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :comment_date, :value => Time.now.strftime("%A %d %B %Y") %>
+    <%= f.hidden_field :post_id, :value => @selected_post.id %>
+
+    <div class="actions btn">
+      <%= f.submit "Post" %>
+    </div>
   <%end%>
-
-<%= form_for [@selected_post, @comment] do |f| %>
-  <div class="field">
-    <%= f.label :Comment %><br />
-    <%= f.text_field :comment_content %>
-  </div>
-
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :comment_date, :value => Time.now %>
-  <%= f.hidden_field :post_id, :value => @selected_post.id %>
-
-  <div class="actions btn">
-    <%= f.submit "Post" %>
-  </div>
-<%end%>
 
 </div>

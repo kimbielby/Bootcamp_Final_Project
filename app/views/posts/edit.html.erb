@@ -1,24 +1,26 @@
-<%= form_for @post do |f| %>
-  <div class="field">
-    <%= f.label :post_title %><br />
-    <%= f.text_field :post_title%>
-  </div>
+<div class="container-fluid edit_post_container">
+  <%= form_for @post do |f| %>
+    <div class="field">
+      <%= f.label :post_title %><br />
+      <%= f.text_field :post_title%>
+    </div>
 
-  <div class="field">
-    <%= f.label :post_content %><br />
-    <%= f.text_field :post_content%>
-  </div>
+    <div class="field">
+      <%= f.label :post_content %><br />
+      <%= f.text_field :post_content%>
+    </div>
 
-  <div>
-    <%= f.label :pic %>
-    <%= f.file_field :pic %>
-  </div>
+    <div>
+      <%= f.label :pic %>
+      <%= f.file_field :pic %>
+    </div><br>
 
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :post_date, :value => Time.now %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :post_date, :value => Time.now.strftime("%A %d %B %Y") %>
 
-  <div class="actions">
-    <%= f.submit "Post" %>
-  </div>
-<% end %>
-<%= link_to "Cancel", post_path(params[:id]) %>
+    <div class="actions">
+      <%= f.submit "Post" %>
+    </div><br>
+  <% end %>
+  <%= link_to "Cancel", post_path(params[:id]), class: "btn btn-info" %>
+</div>

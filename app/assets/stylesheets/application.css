@@ -14,4 +14,21 @@
  *= require_self
  */
 
- @import "stylesheets/navigation"; 
+ @import "stylesheets/navigation";
+
+ #notice{
+  left:0;
+  top:20px;
+  position:absolute;
+  z-index:10000;
+  width:100%;
+}
+
+.alert-temp{
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.landing_page_container {
+  width: 100%;
+}

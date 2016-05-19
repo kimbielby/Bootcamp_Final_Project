@@ -1,7 +1,7 @@
 .post_details_container {
   background: linear-gradient(
-  rgba(24, 28, 28, 0.45),
-  rgba(24, 28, 28, 0.45)
+  rgba(247, 235, 213, 0.5),
+  rgba(247, 235, 213, 0.5)
   ),
  url(https://cdn.notonthehighstreet.com/system/product_images/images/001/628/024/original_inspirational-quote-travel-journal.jpg);
   background-position: center top;
@@ -13,6 +13,27 @@
 
 }
 
+.content_panel {
+  max-width: fit-content;
+}
+
+.image_content {
+  max-width: fit-content;
+}
+
+.edit_post_container {
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.5),
+  rgba(247, 235, 213, 0.5)
+  ),
+ url(http://wonderopolis.org/wp-content/uploads/2011/07/close-up-of-a-pencil-eraser_shutterstock_55561411.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
 
 
 

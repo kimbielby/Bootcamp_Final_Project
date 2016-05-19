@@ -1,7 +1,7 @@
 .create_network_container {
   background: linear-gradient(
-  rgba(247, 235, 213, 0.4),
-  rgba(247, 235, 213, 0.4)
+  rgba(247, 235, 213, 0.6),
+  rgba(247, 235, 213, 0.6)
   ),
    url(http://geoawesomeness.com/wp-content/uploads/2013/11/maps.jpg);
   background-position: center top;
@@ -12,18 +12,41 @@
   position: absolute;
 }
 
-// .join_network_container {
-//   background-image: url(http://3.bp.blogspot.com/-ie44UzPvqxk/Td3Amf23TdI/AAAAAAAABRQ/J2ooSz_iGSc/s1600/ToktoMetroMap_en.png);
-//   background-position: center top;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   min-height: 100%;
-//   min-width: 100%;
-//   position: absolute;
-// }
+.create_network_button {
+  padding: 10px;
+}
+
+.cancel_link {
+  background-color: white;
+  max-width: fit-content;
+}
+
+.join_network_container {
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.6),
+  rgba(247, 235, 213, 0.6)
+  ),
+   url(http://geoawesomeness.com/wp-content/uploads/2013/11/maps.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
+.list_of_networks {
+  background-color: white;
+  max-width: max-content;
+  text-align: center;
+  margin: auto;
+}
 
 .network_posts_container {
-  background-image: url(https://cdn.notonthehighstreet.com/system/product_images/images/001/628/024/original_inspirational-quote-travel-journal.jpg);
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.6),
+  rgba(247, 235, 213, 0.6)
+  ), url(https://cdn.notonthehighstreet.com/system/product_images/images/001/628/024/original_inspirational-quote-travel-journal.jpg);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;

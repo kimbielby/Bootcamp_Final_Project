@@ -1,17 +1,19 @@
 <div class="container-fluid create_network_container">
-  <h3>Create a Network</h3>
+  <h3><strong>Create a Network</strong></h3>
 
   <%= form_for @network do |f| %>
     <div class="field">
-      <%= f.label :network_name %><br />
+      <strong><%= f.label :network_name %></strong><br />
       <%= f.text_field :network_name%>
     </div>
 
     <%= f.hidden_field :user_id, :value => current_user.id %>
 
-    <div class="actions">
-      <%= f.submit "Post" %>
+    <div class="actions create_network_button">
+      <%= f.submit "Create" %>
     </div>
   <%end%>
-  <%= link_to 'Cancel', user_path(current_user.id), method: 'GET' %>
+  <div class="cancel_link">
+    <%= link_to 'Cancel', user_path(current_user.id), method: 'GET', class: "btn btn-info" %>
+  </div>
 </div>

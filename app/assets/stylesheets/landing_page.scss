@@ -1,9 +1,11 @@
 .landing_page_container {
-  background-image: url(http://i.huffpost.com/gen/1568424/images/o-TRAVEL-LAPTOP-facebook.jpg);
+  background: linear-gradient(
+  rgba(247, 235, 213, 0.3),
+  rgba(247, 235, 213, 0.3)
+  ), url(http://i.huffpost.com/gen/1568424/images/o-TRAVEL-LAPTOP-facebook.jpg);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
   position: absolute;
 }
- 
