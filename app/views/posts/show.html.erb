@@ -10,11 +10,12 @@
     </div>
     <div class="panel-footer"><strong>Network:</strong> <%= @selected_post.network.network_name  %></div>
   </div>
-  <div class="panel panel-default image_content">
-    <div class="panel-body">
-      <%= image_tag @selected_post.pic.url, width: '100' %>
-    </div>
+  <div class="image">
+    <%= image_tag @selected_post.pic.url, width: '100' %>
   </div>
+
+
+
   <div class="panel panel-info content_panel">
     <div class="panel-heading">
       <h3 class="panel-title"><h3>Comments</h3></h3>
