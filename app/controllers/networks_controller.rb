@@ -11,6 +11,7 @@ class NetworksController < ApplicationController
     @network = Network.new(network_params)
     if @network.save
       flash[:notice] = 'Network created successfully!'
+      current_user.networks.push(@network)
       redirect_to user_path(current_user.id)
     else
       flash[:notice] = 'Network not created successfully. Please try again.'
